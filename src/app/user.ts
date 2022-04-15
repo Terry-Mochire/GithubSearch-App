@@ -1,11 +1,11 @@
 export class User {
         
     constructor(
-        public userName:string,
-        public userProfilePicture: any, 
-        public userBio: string,
-        public userNumberOfPublicRepos: Number,
-        public userGithubProfileLink: any
+        public login:string,
+        public avatar_url: any, 
+        public bio: string,
+        public public_repos: number,
+        public html_url: string,
          ){
         
     }
