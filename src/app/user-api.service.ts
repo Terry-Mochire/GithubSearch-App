@@ -23,7 +23,7 @@ export class UserAPIService {
          this.user.login = response!.login;
          this.user.avatar_url = response!.avatar_url;
          this.user.bio = response!.bio;
-         this.user.bio =response!.avatar_url;
+         this.user.html_url = response!.html_url;
          this.user.public_repos = response!.public_repos;
        }, error => {
           this.user.login = 'This user may not exist.'
