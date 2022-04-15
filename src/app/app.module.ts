@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { UserComponent } from './user/user.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UserComponent } from './user/user.component';
-
+import { DateCreatedPipe } from './date-created.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    DateCreatedPipe
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule, 
     HttpClientModule,

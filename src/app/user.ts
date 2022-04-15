@@ -6,6 +6,7 @@ export class User {
         public bio: string,
         public public_repos: number,
         public html_url: string,
+        public created_at: string,
          ){
         
     }

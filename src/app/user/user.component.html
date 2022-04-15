@@ -3,3 +3,4 @@
 <p>{{myUser.bio}}</p>
 <p> Number of public repos: {{myUser.public_repos}}</p>
 <a href="{{myUser.html_url}}" target="_blank">Go to my Github page</a>
+<p>This user joined Github {{myUser.created_at| date : 'y' | dateCreated}} year/s ago</p>

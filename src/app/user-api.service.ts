@@ -10,7 +10,7 @@ export class UserAPIService {
   githubUser:string = 'Terry-Mochire';
   user_URL:string = `https://api.github.com/users/${this.githubUser}`
   constructor(private http: HttpClient) {
-    this.user = new User(" ", " ", " ", 0, " ")
+    this.user = new User(" ", " ", " ", 0, " ", " ")
    }
 
   getUserDetails(){
@@ -25,6 +25,7 @@ export class UserAPIService {
          this.user.bio = response!.bio;
          this.user.html_url = response!.html_url;
          this.user.public_repos = response!.public_repos;
+         this.user.created_at = response!.created_at;
        }, error => {
           this.user.login = 'This user may not exist.'
 
