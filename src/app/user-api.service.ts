@@ -3,18 +3,18 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from './user';
-import { Repository } from './repository'; 
+import { Repo } from './repository';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserAPIService {
+export class UserAPIService{
 
   user!: User;
   errorMessage!: string;
   repoName!: string;
-  userRepos!: Repository[];
-  repos!:Repository[];
+  userRepos!: Repo[];
+  repos!:Repo[]
   constructor(private http: HttpClient) {
   
   }
@@ -55,7 +55,7 @@ export class UserAPIService {
   getUserRepos(userName: string) {
     const promise = new Promise<void>((resolve, reject) => {
       this.http
-        .get<Repository[]>(`${environment.user_URL}/${userName}/repos`,{headers:{
+        .get<Repo[]>(`${environment.user_URL}/${userName}/repos`,{headers:{
           Authorization: `token ${environment.access_token}`
         }})
         .subscribe({
@@ -84,7 +84,7 @@ export class UserAPIService {
 
 
     const promise =  new Promise<void>((resolve,reject)=>{
-        this.http.get<Repository[]>(`${environment.userRepositories_URL}${name}*`,{
+        this.http.get<Repo[]>(`${environment.userRepositories_URL}${name}*`,{
           headers: {
             Authorization: `token ${environment.access_token}`,
           },

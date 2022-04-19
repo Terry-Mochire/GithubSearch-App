@@ -1,8 +1,72 @@
-<div *ngFor="let repo of userRepositories" >
-    <ul>
-        <li>{{repo.name}} <br>
-            <span>Created on : {{repo.created_at| date}}</span><br>
-            <span>{{repo.description}}</span></li>
-            <span><a href="{{repo.homepage}}">See live page</a></span>
-    </ul>
-</div>
+<div class="nav-items">
+    <a routerLink="/user">
+      <fa-icon [icon]="faArrowLeft">
+      </fa-icon>
+  
+    </a>
+
+
+  </div>
+  
+
+   <div class="main">
+    <div class="title">
+      <h1>Search For any Repo in Github</h1>
+      <div class="hr"></div>
+    </div>
+    <div class="search">
+      <input
+        type="search"
+        (keyup.enter)="getRepos(repo.value)"
+        #repo
+        placeholder="Search for a user"
+      />
+      <button  (click)="getRepos(repo.value)">Search</button>
+    </div>
+  
+  </div>
+
+ 
+
+  <p class="rl"
+  *ngIf="repo.value">Search results for {{repo.value}} ...</p>
+     
+    <div class="repos">
+      <div class="repos-cont" *ngFor="let repo of repos">
+        <div class="i-repo">
+          <a [href]="repo.html_url"><fa-icon [icon]="faLink"></fa-icon></a>
+        
+          <p *ngIf="repo.name" class="nm">
+              <fa-icon [icon]="faFolder"></fa-icon>
+              {{ repo.name }}</p>
+  
+          <div class="sz">
+            <p *ngIf="repo.language" class="lang">
+              Language: <span>{{ repo.language }}</span>
+            </p>
+            <p class="s-z" *ngIf="repo.size">
+              Size: <span> {{ repo.size }}</span>
+            </p>
+          </div>
+          <p class="desc" *ngIf="repo.description">{{ repo.description}}</p>
+          <div class="stars">
+            <div class="str-1" *ngIf="repo.watcher_count">
+              <fa-icon [icon]="faEye"></fa-icon>
+              {{ repo.watcher_count }}
+            </div>
+  
+            <div class="str-2" *ngIf="repo.stargazers_count">
+              <fa-icon [icon]="faStar"></fa-icon>
+              {{ repo.stargazers_count }}
+            </div>
+            <div class="str-3" *ngIf="repo.stargazers_count">
+              <fa-icon [icon]="faCode"> </fa-icon>
+              {{ repo.forks_count }}
+            </div>
+          </div>
+          <p *ngIf="repo.topics" class="topics" style="color: white">
+            {{ repo.topics}}
+          </p>
+        </div>
+      </div>
+    </div>
