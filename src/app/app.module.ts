@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NoUserComponent } from './no-user/no-user.component';
+import { NavComponent } from './nav/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { NoUserComponent } from './no-user/no-user.component';
     DateCreatedPipe,
     ReposComponent,
     FormComponent,
-    NoUserComponent
+    NoUserComponent,
+    NavComponent
   ],
   imports: [
 
