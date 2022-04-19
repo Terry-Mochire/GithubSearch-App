@@ -1,12 +1,14 @@
-export class Repository {
-    
-    constructor(
-       public name: string,
-       public description: string,
-       public created_at: any,
-       public homepage: string,
+export interface Repo{
+    name:string;
+    html_url:string;
+    description:string;
+    stargazers_count:number;
+    forks_count:number;
+    watcher_count:number;
+    topics:[];
+    language:string;
+    size:number;
 
-    ){
 
-    }
 }
+
