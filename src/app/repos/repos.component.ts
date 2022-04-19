@@ -22,7 +22,7 @@ export class ReposComponent implements OnInit {
   constructor(private createdUser: UserAPIService ) { }
 
   ngOnInit(): void {
-    this.getRepos("fight")
+    this.getRepos("")
   }
 
 

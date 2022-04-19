@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { UserAPIService } from '../user-api.service';
 import { User } from '../user'; 
 import { Repo } from '../repository';
-import { faEye, faStar, faCode, faSearch, faFolder, faLink } from '@fortawesome/free-solid-svg-icons';
-
+import { Component, OnInit } from '@angular/core';
+import { UserAPIService } from '../user-api.service';
+import {faStar,faCode,faEye,faSearch,faFolder,faLink} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user',
@@ -18,6 +17,7 @@ export class UserComponent implements OnInit {
   repos!: Repo[];
   defaultUser!:User;
 
+  // icons
   faEye = faEye;
   faStar = faStar;
   faCode = faCode;
@@ -25,21 +25,21 @@ export class UserComponent implements OnInit {
   faFolder = faFolder;
   faLink = faLink;
 
-  constructor(private createdUser: UserAPIService) {
+  constructor(private _githubService: UserAPIService) {
 
 
   }
   ngOnInit(){
-     this.getUserDetails('charity-bit')
+     this.getUserDetails('Terry-Mochire')
   }
 
 
 
   getUserDetails(username:string){
-    this.createdUser.getUser(username).then(
+    this._githubService.getUser(username).then(
 
       (success)=>{
-        this.userDetails = this.createdUser.user;
+        this.userDetails = this._githubService.user;
         console.log(success)
       },
       (error)=>{
@@ -48,9 +48,9 @@ export class UserComponent implements OnInit {
       }
     );
 
-    this.createdUser.getUserRepos(username).then(
+    this._githubService.getUserRepos(username).then(
       ()=>{
-        this.repos = this.createdUser.userRepos;
+        this.repos = this._githubService.userRepos;
       },
       (error)=>{
         console.log(error)
@@ -62,3 +62,4 @@ export class UserComponent implements OnInit {
 
 
 }
+
