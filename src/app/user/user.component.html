@@ -3,7 +3,7 @@
       <app-nav>
       </app-nav>
       
-      <div class="s-parent">
+      <!-- <div class="s-parent">
         <div class="search-repo">
           <fa-icon [icon]="faSearch">
       
@@ -12,7 +12,7 @@
         </div>
      
         
-      </div>
+      </div> -->
     </div>
    
     <div class="hr">
@@ -41,7 +41,7 @@
   
     <div>
       <p class="rl" *ngIf="username.value"
-  >Search results for {{username.value}} ...</p>
+      >Search results for {{username.value}} ...</p>
   
   
       <div *ngIf="userDetails; then results"></div>
@@ -58,12 +58,6 @@
   <ng-container #user>
     <ng-template #results>
       <div class="results">
-        <div class="link-p" appHover>
-          <a class="link"
-          [href]="userDetails.html_url" *ngIf="userDetails.html_url">
-            <fa-icon [icon]="faLink"></fa-icon></a>  
-  
-        </div>
         <div class="details">
           <a [href]="userDetails.html_url">
             <code class="code">
@@ -104,7 +98,7 @@
     </ng-template>
    
     <ng-template #urepo>
-      <p class="rl">Repositories</p>
+      <p class="rl">User Repositories</p>
      
       <div class="repos">
         <div class="repos-cont" *ngFor="let repo of repos">
