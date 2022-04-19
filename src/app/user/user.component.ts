@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserAPIService } from '../user-api.service';
 import { User } from '../user';
+import { FormControl } from '@angular/forms';
 
 
 
@@ -11,11 +12,23 @@ import { User } from '../user';
 })
 export class UserComponent implements OnInit {
   myUser!: User
+  name: any = new FormControl();
+ 
+ 
   constructor( private userService: UserAPIService) { }
   
   ngOnInit(): void {
-    this.userService.getUserDetails();
+    this.searchRepos();
+    this.userService.getUserDetails(this.searchRepos()); 
     this.myUser = this.userService.user;
     console.log(this.myUser)
-}
+  }
+
+  searchRepos(){
+    
+   const username = new FormControl(this.name.value);
+    console.log(username.value);
+    return false;
+  }
+
 }

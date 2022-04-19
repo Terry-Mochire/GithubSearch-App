@@ -1,6 +1,15 @@
+<form class="m-2" #createUserForm ="ngForm">
+    <div class="mb-3">
+        <label for="username" class="form-label">Your Github Username</label>
+        <input type="text" class="form-control" id="username" name="username"placeholder="e.g Terry-Mochire" [formControl]="name">
+    </div>
+    <button type='submit'class="btn btn-primary btn-block" (click)="searchRepos()">Search</button>
+</form>
+<div>
 <img src="{{myUser.avatar_url}}" alt="userProfilePicture" style="width: 150px; height: 150px;">
 <h1>{{myUser.login}}</h1>
 <p>{{myUser.bio}}</p>
 <p> Number of public repos: {{myUser.public_repos}}</p>
 <a href="{{myUser.html_url}}" target="_blank">Go to my Github page</a>
 <p>This user joined Github {{myUser.created_at| date : 'y' | dateCreated}} year/s ago</p>
+</div>
