@@ -1,0 +1,8 @@
+<div *ngFor="let repo of userRepositories" >
+    <ul>
+        <li>{{repo.name}} <br>
+            <span>Created on : {{repo.created_at| date}}</span><br>
+            <span>{{repo.description}}</span></li>
+            <span><a href="{{repo.homepage}}">See live page</a></span>
+    </ul>
+</div>

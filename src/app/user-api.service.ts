@@ -7,8 +7,8 @@ import { User } from './user';
 })
 export class UserAPIService {
   user! :User;
-  githubUser:string = 'Terry-Mochire';
-  user_URL:string = `https://api.github.com/users/${this.githubUser}`
+  githubUserName:string = 'Terry-Mochire';
+  user_URL:string = `https://api.github.com/users/${this.githubUserName}`
   constructor(private http: HttpClient) {
     this.user = new User(" ", " ", " ", 0, " ", " ")
    }
@@ -16,7 +16,7 @@ export class UserAPIService {
   getUserDetails(){
     
 
-    let promise = new Promise((resolve, reject) =>
+    const promise = new Promise((resolve, reject) =>
     {
       this.http.get<User>(this.user_URL).toPromise().then(
        response => {

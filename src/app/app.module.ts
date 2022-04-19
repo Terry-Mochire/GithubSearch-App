@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DateCreatedPipe } from './date-created.pipe';
+import { ReposComponent } from './repos/repos.component';
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    DateCreatedPipe
+    DateCreatedPipe,
+    ReposComponent
   ],
   imports: [
 
