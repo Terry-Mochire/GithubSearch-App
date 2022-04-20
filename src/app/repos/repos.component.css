@@ -1,0 +1,18 @@
+.title{
+    text-align: center;
+    color: aliceblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.search{
+    margin-left: 42%;
+}
+.i-repo { 
+    margin-top: 20px;
+    font-size: larger;
+    color: aliceblue;
+    border: 1px solid white;
+    margin: 15px;
+    padding: 20px;
+    
+}
