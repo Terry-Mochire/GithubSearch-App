@@ -24,6 +24,9 @@
 .details a{
    text-decoration: none;
 }
+a:hover {
+    color: cadetblue;
+}
 .ttl{
     font-size: larger;
     color: cadetblue;

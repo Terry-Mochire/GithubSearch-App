@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NoUserComponent } from './no-user/no-user.component';
 import { NavComponent } from './nav/nav.component';
+import { HoverDirective } from './hover.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { NavComponent } from './nav/nav.component';
     DateCreatedPipe,
     ReposComponent,
     NoUserComponent,
-    NavComponent
+    NavComponent,
+    HoverDirective
   ],
   imports: [
 
