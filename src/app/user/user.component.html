@@ -85,6 +85,10 @@
                 Repositories:
                 <span class="num">{{ userDetails.public_repos }}</span>
               </p>
+              <p class="ttl">
+                Joined Github
+                <span>{{userDetails.created_at |  date : 'y' | dateCreated }} year ago.</span>
+              </p>
     
               <p class="closing">&#125;</p>
             </code>

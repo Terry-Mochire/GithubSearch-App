@@ -8,4 +8,5 @@ export class User {
     html_url!:string;
     public_repos!:string;
     location!:string;
+    created_at: any;
 }
